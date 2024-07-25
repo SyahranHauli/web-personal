@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Permohonan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group .inline {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Permohonan</h1>
+    <form action="/submit" method="post">
+        <div class="form-group">
+            <label>Jenis Permohonan:</label>
+            <div class="inline"><input type="checkbox" name="jenis_permintaan" value="Registrasi Halo"> Registrasi Halo</div>
+            <div class="inline"><input type="checkbox" name="jenis_permintaan" value="Penambahan Nomor"> Penambahan Nomor</div>
+            <div class="inline"><input type="checkbox" name="jenis_permintaan" value="Migrasi Prabayar ke Halo"> Migrasi Prabayar ke Halo</div>
+        </div>
+
+        <div class="form-group">
+            <label>Tipe Pelanggan:</label>
+            <div class="inline"><input type="checkbox" name="tipe_pelanggan" value="Corporate"> Corporate</div>
+            <input type="text" name="no_corporate" placeholder="No.PKS/WOSPK/MOU/BAK">
+            <div class="inline"><input type="checkbox" name="tipe_pelanggan" value="Consumer"> Consumer</div>
+            <div class="inline"><input type="checkbox" name="tipe_pelanggan" value="Telkomsel"> Telkomsel</div>
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Telkomsel Halo (Baru/Tambahan):</label>
+            <input type="text" name="nomor_halo_baru">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Telkomsel Halo Utama (jika ada):</label>
+            <input type="text" name="nomor_halo_utama">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Prabayar:</label>
+            <input type="text" name="nomor_prabayar">
+        </div>
+
+        <div class="form-group">
+            <label>Nama Perusahaan:</label>
+            <input type="text" name="nama_perusahaan">
+        </div>
+
+        <div class="form-group">
+            <label>Nama Pelanggan / Nama Kontak Perusahaan:</label>
+            <input type="text" name="nama_pelanggan">
+        </div>
+
+        <div class="form-group">
+            <label>No. Induk Kependudukan:</label>
+            <input type="text" name="no_nik">
+        </div>
+
+        <div class="form-group">
+            <label>No. Kartu Keluarga:</label>
+            <input type="text" name="no_kk">
+        </div>
+
+        <div class="form-group">
+            <label>Tempat, Tanggal Lahir:</label>
+            <input type="text" name="tempat_tanggal_lahir">
+        </div>
+
+        <div class="form-group">
+            <label>Kartu Identitas (Untuk WNA):</label>
+            <div class="inline"><input type="checkbox" name="kartu_identitas" value="Paspor"> Paspor</div>
+            <div class="inline"><input type="checkbox" name="kartu_identitas" value="KITAP/KITAS"> KITAP/KITAS</div>
+        </div>
+
+        <div class="form-group">
+            <label>No. Paspor/KITAP/KITAS:</label>
+            <input type="text" name="no_paspor">
+        </div>
+
+        <div class="form-group">
+            <label>Masa Berlaku Paspor/KITAP/KITAS:</label>
+            <input type="date" name="masa_berlaku">
+        </div>
+
+        <div class="form-group">
+            <label>Kewarganegaraan:</label>
+            <select name="kewarganegaraan">
+                <option value="wni">WNI</option>
+                <option value="wna">WNA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat (Jika Berbeda dengan data dukcapil):</label>
+            <div class="inline"><input type="checkbox" name="alamat_berbeda" value="Kantor"> Kantor</div>
+            <div class="inline"><input type="checkbox" name="alamat_berbeda" value="Rumah"> Rumah</div>
+        </div>
+
+        <div class="form-group">
+            <label>Kode Pos:</label>
+            <input type="text" name="kode_pos">
+        </div>
+
+        <div class="form-group">
+            <label>Kota:</label>
+            <input type="text" name="kota">
+        </div>
+
+        <div class="form-group">
+            <label>Provinsi:</label>
+            <input type="text" name="provinsi">
+        </div>
+
+        <div class="form-group">
+            <label>Alamat Email e-Bill:</label>
+            <input type="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label>No. Telepon (Kantor/Rumah):</label>
+            <input type="text" name="telepon">
+            <label for="ext">Ext</label>
+            <input type="text" name="ext" id="ext">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
